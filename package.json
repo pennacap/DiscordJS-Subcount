@@ -1,0 +1,27 @@
+{
+  "name": "YoutubeCounter",
+  "version": "1.0",
+  "description": "Just a basic piece of code to automatically count someone's subscribers using discord channels",
+  "main": "node index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheTaxPerson/DiscordJS-Subcount.git"
+  },
+  "author": "TheTaxPerson",
+  "license": "TheTaxPerson",
+  "bugs": {
+    "url": "https://github.com/TheTaxPerson/DiscordJS-Subcount/issues"
+  },
+  "homepage": "https://github.com/AnIdiotsGuide/guidebot#readme",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "discord.js": "^12.2.0",
+    "request": "^2.88.2"
+  }
+}
