@@ -15,7 +15,7 @@ Change the values inside index.js to match your own
 ```sh
 node index
 ```
-## Meta
+## Media
 
 Twitter – [@TheTaxPerson](https://twitter.com/TheTaxPerson)
 
