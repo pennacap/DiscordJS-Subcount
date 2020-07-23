@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/TheTaxPerson/DiscordJS-Subcount/issues"
   },
-  "homepage": "https://github.com/AnIdiotsGuide/guidebot#readme",
+  "homepage": "https://github.com/TheTaxPerson/DiscordJS-Subcountt#readme",
   "dependencies": {
     "cron": "^1.8.2",
     "discord.js": "^12.2.0",
