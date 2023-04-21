@@ -14,7 +14,7 @@
     "url": "git+https://github.com/TheTaxPerson/DiscordJS-Subcount.git"
   },
   "author": "TheTaxPerson",
-  "license": "TheTaxPerson",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TheTaxPerson/DiscordJS-Subcount/issues"
   },
