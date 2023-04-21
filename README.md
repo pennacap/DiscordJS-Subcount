@@ -1,8 +1,7 @@
 # YoutubeCounter
-> A DiscordJS v12 bot that tracks youtuber stats
+> A DiscordJS bot that tracks YouTuber statistics
 
-This is a bot made in DiscordJS v12 for those of you that want to track your favourite youtubers's stats or maybe even your own every 10 minutes
-Why every 10 minutes? Because the DiscordAPI allows 2 channel renames every 10 minutes.
+This Discord bot is for those of you who want to track your favourite YouTubers's statistics or maybe even your own every 10 minutes
 
 ![](usage.gif)
 
@@ -11,10 +10,18 @@ Why every 10 minutes? Because the DiscordAPI allows 2 channel renames every 10 m
 ```sh
 npm i
 ```
-Change the values inside index.js to match your own
+Make a new file named `.env` and type the following code,
 ```sh
-node index
+CHANNEL_ID=THEYTCHANNELID
+TOKEN=YOURDISCORDBOTTOKEN
+API_KEY=YOURGOOGLEAPIKEY
+GUILD_ID=YOURDISCORDGUILDID
+# Following lines are optional
+#SUB_CATEGORY_ID=YOURSUBSCRIBERCOUNTVC
+#VID_CATEGORY_ID=YOURVIDEOCOUNTVC
+#VIEWS_CATEGORY_ID=YOURTOTALVIEWSVC
 ```
+
 ## Media
 
 Twitter – [@TheTaxPerson](https://twitter.com/TheTaxPerson)
