@@ -1,9 +1,14 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var request = require("request");
-var CronJob = require("cron").CronJob;
-var id = "YOUTUBE-CHANNEL-ID";
-var key = "YOUTUBE-API-KEY";
+const request = require("request");
+const { CronJob } = require("cron");
+
+require('dotenv').config()
+
+
+
+var id = process.env.CHANNEL_ID;
+var key = process.env.API_KEY;
 var url =
   "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" +
   id +
@@ -17,12 +22,12 @@ const SI_PREFIXES = [
   { value: 1e12, symbol: "T" },
   { value: 1e15, symbol: "P" },
   { value: 1e18, symbol: "E" },
-];
+].reverse();
 
 const abbreviateNumber = (number) => {
   if (number === 0) return number;
 
-  const tier = SI_PREFIXES.filter((n) => number >= n.value).pop();
+  const tier = SI_PREFIXES.find((n) => number >= n.value);
   const numberFixed = (number / tier.value).toFixed(1);
 
   return `${numberFixed}${tier.symbol}`;
@@ -42,10 +47,10 @@ var job = new CronJob(
 
         var json = JSON.parse(text);
 
-        let guild = client.guilds.cache.get("GUILD-ID");
-        let SubChannel = guild.channels.cache.get("CHANNEL-ID");
-        let VideoChannel = guild.channels.cache.get("CHANNEL-ID");
-        let ViewsChannel = guild.channels.cache.get("CHANNEL-ID");
+        let guild = client.guilds.cache.get(process.env.GUILD_ID);
+        let SubChannel = guild.channels.cache.get(process.env.SUB_CATEGORY_ID);
+        let VideoChannel = guild.channels.cache.get(process.env.VID_CATEGORY_ID));
+        let ViewsChannel = guild.channels.cache.get(process.env.VIEWS_CATEGORY_ID));
         TotalViews = json.items[0].statistics.viewCount;
         Subscribers = json.items[0].statistics.subscriberCount;
         VideoCount = json.items[0].statistics.videoCount;
@@ -67,4 +72,4 @@ client.on("ready", () => {
   job.start();
 });
 
-client.login("YOUR-TOKEN-HERE");
+client.login(process.env.TOKEN);
