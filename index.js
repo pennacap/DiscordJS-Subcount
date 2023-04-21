@@ -48,17 +48,25 @@ var job = new CronJob(
         var json = JSON.parse(text);
 
         let guild = client.guilds.cache.get(process.env.GUILD_ID);
-        let SubChannel = guild.channels.cache.get(process.env.SUB_CATEGORY_ID);
-        let VideoChannel = guild.channels.cache.get(process.env.VID_CATEGORY_ID));
-        let ViewsChannel = guild.channels.cache.get(process.env.VIEWS_CATEGORY_ID));
-        TotalViews = json.items[0].statistics.viewCount;
-        Subscribers = json.items[0].statistics.subscriberCount;
-        VideoCount = json.items[0].statistics.videoCount;
-        SubChannel.edit({ name: `Name: ${abbreviateNumber(Subscribers)}` });
-        VideoChannel.edit({ name: `Video Count: ${VideoCount}` });
-        ViewsChannel.edit({
-          name: `Total Views: ${abbreviateNumber(TotalViews)}`,
-        });
+        if (process.env.SUB_CATEGORY_ID){
+          let SubChannel = guild.channels.cache.get(process.env.SUB_CATEGORY_ID);
+          let Subscribers = json.items[0].statistics.subscriberCount;  
+          SubChannel.edit({ name: `Name: ${abbreviateNumber(Subscribers)}` });  
+        }
+        if (process.env.VID_CATEGORY_ID) {
+          let VideoChannel = guild.channels.cache.get(process.env.VID_CATEGORY_ID));
+          let TotalViews = json.items[0].statistics.viewCount;  
+          VideoChannel.edit({ name: `Video Count: ${VideoCount}` });
+        }
+        if (process.env.VIEWS_CATEGORY_ID) {
+          let ViewsChannel = guild.channels.cache.get(process.env.VIEWS_CATEGORY_ID));
+          let VideoCount = json.items[0].statistics.videoCount;
+        
+        
+          ViewsChannel.edit({
+            name: `Total Views: ${abbreviateNumber(TotalViews)}`,
+          });
+        }
         console.log("Channels Updated");
       }
     );
